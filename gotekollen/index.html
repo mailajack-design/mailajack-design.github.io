@@ -1,121 +1,412 @@
 <!DOCTYPE html>
+
 <html lang="sv">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Götekollen – Support & Integritetspolicy</title>
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.7;
-            color: #222;
-            background: #fafafa;
-        }
+<meta charset="UTF-8">
 
-        h1, h2 {
-            color: #0a4d68;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+<title>Götekollen</title>
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
+<style>
 
-        a:hover {
-            text-decoration: underline;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        footer {
-            margin-top: 40px;
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-    </style>
+    body {
+
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+        background: #f5f5f7;
+
+        color: #1d1d1f;
+
+        line-height: 1.6;
+
+    }
+
+    header {
+
+        background: #fff;
+
+        border-bottom: 1px solid #e5e5e5;
+
+        padding: 20px 24px;
+
+    }
+
+    header h1 { font-size: 20px; font-weight: 600; }
+
+    header span { font-size: 13px; color: #6e6e73; }
+
+    nav {
+
+        background: #fff;
+
+        border-bottom: 1px solid #e5e5e5;
+
+        padding: 0 24px;
+
+        display: flex;
+
+        gap: 4px;
+
+    }
+
+    nav button {
+
+        background: none;
+
+        border: none;
+
+        cursor: pointer;
+
+        display: inline-block;
+
+        padding: 12px 16px;
+
+        font-size: 14px;
+
+        color: #6e6e73;
+
+        border-bottom: 2px solid transparent;
+
+    }
+
+    nav button.active { color: #0071e3; border-bottom-color: #0071e3; }
+
+    nav button:hover { color: #0071e3; }
+
+    main {
+
+        max-width: 720px;
+
+        margin: 40px auto;
+
+        padding: 0 24px 60px;
+
+    }
+
+    .section { display: none; }
+
+    .section.active { display: block; }
+
+    .card {
+
+        background: #fff;
+
+        border-radius: 12px;
+
+        padding: 28px;
+
+        margin-bottom: 16px;
+
+        border: 1px solid #e5e5e5;
+
+    }
+
+    h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+
+    .faq-item { margin-bottom: 20px; }
+
+    .faq-item:last-child { margin-bottom: 0; }
+
+    .faq-item strong { display: block; font-size: 15px; margin-bottom: 6px; }
+
+    p { font-size: 14px; color: #3a3a3c; margin-bottom: 10px; }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul { padding-left: 20px; font-size: 14px; color: #3a3a3c; }
+
+    ul li { margin-bottom: 6px; }
+
+    .highlight {
+
+        background: #f0f7ff;
+
+        border: 1px solid #c6deff;
+
+        border-radius: 10px;
+
+        padding: 16px 20px;
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+        color: #0071e3;
+
+        margin-bottom: 16px;
+
+    }
+
+    .updated { font-size: 13px; color: #6e6e73; margin-bottom: 20px; }
+
+    .contact-link {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        background: #0071e3;
+
+        color: #fff;
+
+        text-decoration: none;
+
+        padding: 10px 20px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
+
+        font-weight: 500;
+
+        margin-top: 8px;
+
+    }
+
+    .contact-link:hover { background: #0077ed; }
+
+    .disclaimer {
+
+        font-size: 12px;
+
+        color: #6e6e73;
+
+        text-align: center;
+
+        margin-top: 32px;
+
+    }
+
+</style>
+
 </head>
+
 <body>
 
-    <h1>Götekollen</h1>
-    <p>
-        Officiell support- och integritetssida för appen Götekollen.
-    </p>
 
-    <div class="card" id="support">
-        <h2>Support</h2>
+<header>
 
-        <p>
-            Tack för att du använder Götekollen.
-        </p>
+<h1>Götekollen</h1>
 
-        <p>
-            Om du har frågor, vill rapportera ett fel eller lämna feedback,
-            kontakta supporten via e-post:
-        </p>
+<span>Öppen stadsdata för Göteborg</span>
 
-        <p>
-            <strong>E-post:</strong>
-            <a href="mailto:meritpoangsupport@gmail.com">
-                meritpoangsupport@gmail.com
-            </a>
-        </p>
+</header>
 
-        <p>
-            Vi försöker svara så snabbt som möjligt.
-        </p>
+
+<nav>
+
+<button class="active" onclick="showSection('support', this)">Support</button>
+
+<button onclick="showSection('privacy', this)">Integritetspolicy</button>
+
+</nav>
+
+
+<main>
+
+
+<!-- SUPPORT -->
+
+<div id="support" class="section active">
+
+    <div class="card">
+
+        <h2>Vanliga frågor</h2>
+
+
+        <div class="faq-item">
+
+            <strong>Varför visas ingen data?</strong>
+
+            <p>Appen hämtar information från öppna API:er och kräver en aktiv internetanslutning. Kontrollera din uppkoppling och dra ned i listan för att uppdatera.</p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <strong>Stämmer broöppningstiderna?</strong>
+
+            <p>Hisingsbrons schema är baserat på Trafikverkets officiella tider men uppdateras manuellt i appen. Exakta tider kan variera – kontrollera alltid skyltning på plats.</p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <strong>Datan verkar gammal eller felaktig?</strong>
+
+            <p>Götekollen är beroende av data från Göteborgs Stads öppna API:er. Vi kan inte garantera att informationen alltid är korrekt eller aktuell. Vid viktig information, verifiera alltid mot officiella källor.</p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <strong>Är appen kopplad till Göteborgs Stad?</strong>
+
+            <p>Nej. Götekollen är en inofficiell app skapad av en privatperson. Vi har ingen koppling till Göteborgs Stad eller någon av de organisationer vars data visas i appen.</p>
+
+        </div>
+
     </div>
 
-    <div class="card" id="privacy">
-        <h2>Integritetspolicy</h2>
 
-        <p>
-            Götekollen värnar om din integritet.
-        </p>
+    <div class="card">
 
-        <p>
-            Appen samlar inte in, lagrar eller säljer personuppgifter till tredje part,
-            om inte detta uttryckligen anges i appen.
-        </p>
+        <h2>Kontakta oss</h2>
 
-        <p>
-            Eventuell information som används av appen behandlas endast för att
-            tillhandahålla appens funktioner.
-        </p>
+        <p>Har du frågor, hittat ett fel eller vill lämna feedback? Hör av dig via e-post. Vi svarar normalt inom några dagar.</p>
 
-        <p>
-            Om appen använder tjänster från Apple eller andra tredjepartsleverantörer
-            kan dessa behandla information enligt sina egna integritetspolicyer.
-        </p>
+        <a class="contact-link" href="mailto:meritpoangsupport@gmail.com">✉️ meritpoangsupport@gmail.com</a>
 
-        <p>
-            Om du har frågor om denna integritetspolicy är du välkommen att kontakta:
-        </p>
-
-        <p>
-            <a href="mailto:meritpoangsupport@gmail.com">
-                meritpoangsupport@gmail.com
-            </a>
-        </p>
-
-        <p>
-            Senast uppdaterad: 17 juni 2026
-        </p>
     </div>
 
-    <footer>
-        © 2026 Götekollen
-    </footer>
+
+    <p class="disclaimer">Götekollen är inte officiellt kopplad till Göteborgs Stad. Data kan vara försenad eller felaktig.</p>
+
+</div>
+
+
+<!-- INTEGRITETSPOLICY -->
+
+<div id="privacy" class="section">
+
+    <p class="updated">Senast uppdaterad: 17 juni 2026</p>
+
+
+    <div class="highlight">
+
+        🔒 Götekollen samlar inte in, lagrar eller delar någon personlig information om dig.
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Vilken data samlar appen in?</h2>
+
+        <p>Götekollen samlar inte in någon personlig data. Appen kräver inget konto, ingen registrering och ingen inloggning.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Nätverksanrop</h2>
+
+        <p>Appen hämtar offentlig stadsdata från följande externa tjänster:</p>
+
+        <ul style="margin-top: 10px;">
+
+            <li><strong>data.goteborg.se</strong> – Göteborgs Stads öppna data-plattform (parkering, trafik, gatuarbeten, cykelpumpar, gatustädning, vattenmätning)</li>
+
+            <li><strong>gbfs.nextbike.net</strong> – Nextbikes öppna GBFS-flöde för Styr &amp; Ställ (cykeltillgänglighet)</li>
+
+        </ul>
+
+        <p style="margin-top: 10px;">Dessa anrop görs enbart för att visa information i appen. Ingen personlig information skickas i dessa förfrågningar.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Platstjänster</h2>
+
+        <p>Appen använder inte din position och begär inte tillstånd till platstjänster.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Analys och spårning</h2>
+
+        <p>Appen innehåller inga analysverktyg, reklamidentifierare eller spårningskod från tredje part.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Cookies</h2>
+
+        <p>Appen använder inga cookies.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Barn</h2>
+
+        <p>Appen riktar sig inte till barn under 13 år och samlar inte in information från barn.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Ändringar i policyn</h2>
+
+        <p>Om integritetspolicyn uppdateras publiceras den nya versionen på denna sida med ett nytt datum.</p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Kontakt</h2>
+
+        <p>Frågor om integritet? Hör av dig via e-post.</p>
+
+        <a class="contact-link" href="mailto:meritpoangsupport@gmail.com">✉️ meritpoangsupport@gmail.com</a>
+
+    </div>
+
+
+    <p class="disclaimer">Götekollen är inte officiellt kopplad till Göteborgs Stad. Data kan vara försenad eller felaktig.</p>
+
+</div>
+
+
+</main>
+
+
+<script>
+
+function showSection(id, btn) {
+
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+
+    btn.classList.add('active');
+
+}
+
+
+// Visa rätt sektion baserat på URL-hash
+
+if (window.location.hash === '#privacy') {
+
+    showSection('privacy', document.querySelectorAll('nav button')[1]);
+
+}
+
+</script>
+
 
 </body>
+
 </html>
